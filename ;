@@ -1,9 +1,0 @@
-sort ::(Ord a) =>  [a] -> [a]
-sort [] = []
-sort [x:xs] = sort larger ++ [x] ++ sort smaller
-  where
-    larger = [a | a <- xs, a > x]
-    smaller = [a | a <- xs, a <= x]
-
-main = do
-  print $ sort [1,2,6,3,5,6,8,2,3,46,0]
